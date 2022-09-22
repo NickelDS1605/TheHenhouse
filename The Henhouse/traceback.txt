@@ -1,0 +1,22 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 127, in script
+    edward "Darling."
+Exception: Sayer 'edward' is not defined.
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 127, in script
+    edward "Darling."
+  File "C:\Users\lisan\Downloads\renpy-8.0.1-sdk\renpy\ast.py", line 881, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\lisan\Downloads\renpy-8.0.1-sdk\renpy\ast.py", line 774, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'edward' is not defined.
+
+Windows-10-10.0.17763 AMD64
+Ren'Py 8.0.1.22070801
+The Henhouse 1.0
+Thu Sep 22 12:04:50 2022
