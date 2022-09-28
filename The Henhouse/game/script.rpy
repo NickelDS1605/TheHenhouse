@@ -142,7 +142,7 @@ label start:
 
     ed "Darling."
 
-    bella "Of course!! How could we be so rude. I'm Bella Swan and this is my fiance, Edward Spurling."
+    bella "Oh right! How could we be so rude. I'm Bella Swan and this is my fiance, Edward Spurling."
     bella "We're so excited to finally meet you!"
 
     #suspicious vamp ed
@@ -169,7 +169,11 @@ label start:
             $ sus = False
 
     if sus:
-        "im not sure yettttt"
+        #bella juts in
+        bella "That's no way to treat a stranger dear"
+        bella "Forgive my fiance, I'm afraid we aren't very used to having company."
+        
+        #"im not sure yettttt"
 
 
     
