@@ -79,4 +79,4 @@ Exception: Could not find font 'Chiller.ttf'.
 Windows-10-10.0.17763 AMD64
 Ren'Py 8.0.1.22070801
 The Henhouse 1.0
-Wed Sep 28 12:42:18 2022
+Thu Sep 29 12:03:24 2022

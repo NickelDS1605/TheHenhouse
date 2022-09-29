@@ -26,7 +26,7 @@ init python:
 define gui.accent_color = '#44a65b'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#888888'
+define gui.idle_color = '#28eaed'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
@@ -273,7 +273,7 @@ define gui.page_spacing = 0
 define gui.slot_spacing = 15
 
 ## The position of the main menu text.
-define gui.main_menu_text_xalign = -342.0
+define gui.main_menu_text_xalign = -200.0
 define gui.main_menu_text_ypos = -915
 
 
