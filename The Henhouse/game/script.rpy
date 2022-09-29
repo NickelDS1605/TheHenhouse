@@ -96,6 +96,7 @@ label start:
     "How did I get here?"
     "There's something strange about this place..."
     #choice here!!!
+    $ errorleave = False
     menu: 
         "What should I do?"
 
@@ -103,17 +104,18 @@ label start:
             #will either leave it as this
             #or add an error screen and make people rollback maybe?
             #i like this as an error screen, will go back and change later(i have note in google doc)
-            jump errorleave
+           $ errorleave = True
 
         "Follow map":
             "If I get to the town I might be able to find people who can help me."
-    
-    label errorleave:
+            
+    $ nextchoice = False
+    if errorleave:
         #insert scene change
         omni "Go back"
-        jump nextchoice
+        $ nextchoice = True
 
-    label nextchoice:
+    if nextchoice:
         #back to prev scene
         menu:
             "What should I do?"
