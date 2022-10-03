@@ -96,7 +96,7 @@ label start:
     "How did I get here?"
     "There's something strange about this place..."
     #choice here!!!
-    $ errorleave = False
+    $ error = False
     menu: 
         "What should I do?"
 
@@ -104,16 +104,20 @@ label start:
             #will either leave it as this
             #or add an error screen and make people rollback maybe?
             #i like this as an error screen, will go back and change later(i have note in google doc)
-           $ errorleave = True
+            $ error = True
+            jump errorleave
 
         "Follow map":
             "If I get to the town I might be able to find people who can help me."
             
+            
     $ nextchoice = False
-    if errorleave:
-        #insert scene change
-        omni "Go back"
-        $ nextchoice = True
+    label errorleave:
+        if error:
+            #insert scene change
+            omni "Go back"
+            $ nextchoice = True
+        
 
     if nextchoice:
         #back to prev scene
@@ -169,13 +173,84 @@ label start:
 
         "Run away":
             $ sus = False
-
+    $ funny = False
     if sus:
         #bella juts in
         bella "That's no way to treat a stranger dear"
         bella "Forgive my fiance, I'm afraid we aren't very used to having company."
-        
-        #"im not sure yettttt"
+        bella "It's getting quite late, we'd better let you on your merry way!"
+        bella "We hope to see you again %(player_name)s!"
+        ed "It can be difficult to see in the dark and we wouldn't want you to get hurt."
+        bella "Yes! Be sure to follow the map, and not stray from the path."
+        bella "Also avoid strangers! It can be dangerous out here."
+        me "Thank you for all your advice! I'll be sure to be safe."
+        #scene change
+        "Could they have known about Isha?"
+        "Maybe they can help me figure this out"
+    else:
+        #scene change
+        $ funny = True
+        "I can't tell him I don't know"
+        "He looks dangerous"
+        "I have to get out of here."
+        omni "Why do you want to leave?"
+        omni "We haven't done anything to hurt you have we?"
+        menu:
+            "Should I respond?"
+            
+            "No, keep walking":
+                omni "Please talk to me %(player_name)s, it was our hope that you would be happy here."
+
+            "How can you say that???":
+                omni "I know things can be confusing right now, but it's only because you aren't settled in yet."
+                omni "I know you'll be happy once you get comfortable around here."
+        me "I am not happy here, please let me go."
+        omni "I'm afraid that isn't possible."
+        omni "We still have so much to do."
+        #scene change, reset to before
+        "I can't stay here"
+
+    
+    menu:
+        "Do I have any options other than follow the map?"
+
+        "no":
+            me "Guess I better follow the map then..."
+
+    #walking walking wlking
+    #following the map
+    #suddenly!!!!
+    #map blows away
+    me "NOO!"
+    "The map moves too fast for me to catch it"
+    "Crap!"
+    "Which way was I supposed to be going?"
+    if funny:
+        me "Hey!"
+        me "Creepy voice guy!!"
+        me "Can you help???"
+        "     "
+        "         "
+        "      "
+        "Great."
+    "Okay."
+    "I think the path led this way..."
+    #walking
+    #scene change to middle of town
+    "Ah!"
+    "She should know something."
+    me "Hi, my name is %(player_name)s, I'm new in town."
+    me "Can you help me find the way to my house?"
+    #she shows no emotions
+    q "Hi there!"
+    q "How may I help you?"
+    me "Err"
+    me "I lost the map to my house, and was wondering if you help me find the way?"
+    q "Hmm..."
+    #####REMEMMEERS THIS NAME THSI IS IMPORTANt
+    $ brookemarr = False
+    menu:
+        q "Would you mind sitting with me for a few minutes first?"
 
 
     
