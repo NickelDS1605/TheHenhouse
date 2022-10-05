@@ -252,6 +252,46 @@ label start:
     menu:
         q "Would you mind sitting with me for a few minutes first?"
 
+        "Sure":
+            $ brookemarr = True
+            # TODO: yea marriage
+
+        "No, I need to get home.":
+            $ brookemarr = False
+            #show her being upset / or character thing she has no chagne on her face
+            #decide later
+            q "Oh..."
+            q "The house is at the end of the yellow path down there."
+            #she dissapears ish (?)
+
+    "Time to go find my house!"
+    "I wonder how she knew where it was?"
+    #walking walking walking
+    #if marr = false is longer
+    "Wait I never got her name!"
+    "Dang it."
+    #rustle rustle
+    "Wh"
+    "What was that"
+    #oof ah fall
+    me "S-Sir?"
+    me "Are you alright?"
+    q "Oh yes thank you!"
+    q "I'm afraid my rose bushes aren't agreeing with me tonight."
+    #smile + chuckle?
+    me "Do you really think that gardening in the middle of the night is a great choice?"
+    #pause
+    #wowww bitch
+    q "I'm sorry who are you again?"
+    "Oh no"
+    me "My name is %(player_name)s!"
+    me "I just moved into town!"
+    q "It's nice to meet you %(player_name)s! I'm Andy Finch, the town gardener."
+    andy "Tending to the roses helps me communicate with them, they respond much better."
+    #CHOICE 
+
+            
+
 
     
     

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 192: expected statement.
-    funny = True
-          ^
+File "game/script.rpy", line 257: expected statement.
+    TODO: yea marriage
+        ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Mon Oct  3 12:39:05 2022
+Wed Oct  5 12:25:45 2022
