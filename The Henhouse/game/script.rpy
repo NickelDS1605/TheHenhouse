@@ -278,7 +278,7 @@ label start:
     me "Are you alright?"
     q "Oh yes thank you!"
     q "I'm afraid my rose bushes aren't agreeing with me tonight."
-    #smile + chuckle?
+    # andy smiles + chuckles?
     me "Do you really think that gardening in the middle of the night is a great choice?"
     #pause
     #wowww bitch
@@ -287,9 +287,87 @@ label start:
     me "My name is %(player_name)s!"
     me "I just moved into town!"
     q "It's nice to meet you %(player_name)s! I'm Andy Finch, the town gardener."
-    andy "Tending to the roses helps me communicate with them, they respond much better."
     #CHOICE 
+    $ night = False
+    $ andypoints = 0
+    menu:
+        andy "Tending to the roses helps me communicate with them, they respond much better."
 
+        "How fascinating! Looks like its working!":
+            andy "Thank you so much!"
+            andy "If you ever need someone to tend to your garden, I'd be happy to do so!"
+            $ andypoints += 1
+            $ night = True
+
+        "I'm... not sure thats how that works.":
+            #show him being sad now
+            $andypoints -= 1
+            andy "Uh"
+            andy "We all have our own opinions I'm sure."
+            #dont cry dont cry dont cry
+            #now show sudden smile
+    andy "Oh! You must be my new neighbor! How are you getting settled in?"
+    me "Actually I'm trying to find my house right now !"
+    me "Do you know where it is?"
+    # TODO: insert color namew of house here
+    andy "Of course! You're the ## house right here."
+    #move background left
+    #show house
+    me "OMG Thank you!"
+    me "I've been traveling all day and I'm really tired so I think I better go head inside."
+    if night:
+        me "Goodnight Andy!"
+        andy "You too %(player_name)s!"
+        #dissapears into rose bushes
+    else:
+        andy "Goodnight."
+    
+    #show front door of house
+    "It looks cute"
+    #show interior of houes?
+    omni "Do you like it???"
+    omni "We all worked hard on it."
+    me ""
+    me "What do you mean 'we'?"
+    me "Are there more of you?"
+    omni "Well I can't watch you all the time can I? I have a life you know."
+    me "WHAT"
+    omni "Anyways, you still haven't answered."
+    # TODO: learn how to save background preferences
+    $ needschanges = False
+    menu:
+        omni "Do you like your house?"
+
+        "Yes":
+            #keep it
+            omni "Yay!"
+        "No":
+            #gives options for new backgrounds
+            $ needschanges = True
+            omni "Oh no!"
+
+    if needschanges:
+        omni "How can we help?"
+        #background choices
+        #menu:
+
+    omni "I'm glad that's all settled now!"
+    omni "Be sure to get a good night's sleep, we have a lot to do tomorrow."
+
+    #show the bedroom
+    menu:
+        "Should I get a good night's sleep like they said?"
+
+        "Yes":
+            #fade to black nap time
+            "I want to be prepared for tomorrow."
+        "No":
+            "Why."
+            "Why would you pick this option."
+            #fade to black
+
+    
+    
             
 
 

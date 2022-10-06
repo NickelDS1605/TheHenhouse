@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 257: expected statement.
-    TODO: yea marriage
-        ^
+File "game/script.rpy", line 341: choice menuitem expects a non-empty block.
+    "Yes":
+          ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Wed Oct  5 12:25:45 2022
+Thu Oct  6 12:26:37 2022
