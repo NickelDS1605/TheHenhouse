@@ -366,7 +366,95 @@ label start:
             "Why would you pick this option."
             #fade to black
 
+    ####DAY TWO BITCHESSSSSSSSSSSSSS
+    ###LOOOKIE HERE
+    ## INSERTING A BREAK
+
+    #show bedroom
+    #birds chirping >:)
+    #walk to kitchen
+    omni "Hello %(player_name)s!"
+    omni "Welcome to the Henhouse!"
+    omni "Although it isn't our intention to control your every move, we do have some rules and regulations in place to keep you safe."
+    omni "You may only travel to TWO places each day."
+    omni "There may be some of the town residents in these places, as you saw last night."
+    $ question = False
+
+    menu: 
+        omni "Do you have any questions?"
+
+        "Yes":
+            omni "It's good to be prepared!"
+            $ question = True
+        "No":
+            omni "Oh my! Good luck today!"
+            
+            
     
+        
+    label questionmenu:
+        if question:
+            menu:
+                omni "Do you have any questions?"
+
+                "How will I know where each resident is?":
+                    omni "You won't know where the residents are unless you've played before and memorized it."
+                    jump questionmenu
+                    
+                "Why can I only go to two places a day?":
+                    omni "Because there are only so many hours in a day silly!"
+                    jump questionmenu
+                    
+                "How many days do I have here?":
+                    omni "You have six more days here, last night was your first night playing our game."
+                    jump questionmenu
+
+                "What happens after I finish the game?":
+                    omni "The choices you make, such as your commentary on Andy's gardening methods last night will determine what special ending you get!"
+                    jump questionmenu
+                    
+                "What can I do in this game?":
+                    omni "You will go through each day, and sometimes you will get to make choices in your conversations."
+                    omni "These choices can lead to different endings and unlock new aspects of every character you meet."
+                    jump questionmenu
+                    
+                "How do I restart the game?":
+                    omni "If you wish to restart at any point you can open the file The Henhouse is downloaded under and delete all save files in the saves folder."
+                    "(HINT: If you can't find anyone each day we recommend restarting the game and going to different places!)"
+                    jump questionmenu
+                
+                "I have no more questions.":
+                    omni "Great!"
+                    omni "Let's get started."
+    
+    ###DAY 2 PLAYTHROUGH TIME
+    menu:
+        #show map
+        omni "Where would you like to go today?"
+
+        "Town Square":
+            "lalalallaal"
+        
+        "Gardens":
+            "lalalalalala"
+
+        "Church":
+            "lalalalalalla"
+        
+        "Grocery Store":
+            "lallalalalaal"
+
+        "Shopping Center":
+            "lalalalalalalallala"
+        
+        "Graveyard":
+            "lalalalalala"
+        
+        "School":
+            "lallaalalal"
+
+        "Memorial":
+            "lalalalalal"
     
             
 
