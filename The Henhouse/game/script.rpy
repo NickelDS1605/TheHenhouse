@@ -301,7 +301,7 @@ label start:
 
         "I'm... not sure thats how that works.":
             #show him being sad now
-            $andypoints -= 1
+            $ andypoints -= 1
             andy "Uh"
             andy "We all have our own opinions I'm sure."
             #dont cry dont cry dont cry
@@ -428,38 +428,250 @@ label start:
                     omni "Let's get started."
     
     ###DAY 2 PLAYTHROUGH TIME
-    menu:
-        #show map
-        omni "Where would you like to go today?"
+    $ daytwoplays = 0
+    label daytwo:
+        if daytwoplays < 2:
+            menu:
+                #show map
+                omni "Where would you like to go today?"
 
-        "Town Square":
-            "lalalallaal"
+                "Town Square":
+                    "lalalallaal"
+                    $ daytwoplays += 1
+                    jump daytwo
         
-        "Gardens":
-            "lalalalalala"
+                "Gardens":
+                    "lalalalalala"
+                    $ daytwoplays += 1
+                    jump daytwo
 
-        "Church":
-            "lalalalalalla"
+                "Church":
+                    "lalalalalalla"
+                    $ daytwoplays += 1
+                    jump daytwo
         
-        "Grocery Store":
-            "lallalalalaal"
+                "Grocery Store":
+                    "lallalalalaal"
+                    $ daytwoplays += 1
+                    jump daytwo
 
-        "Shopping Center":
-            "lalalalalalalallala"
+                "Shopping Center":
+                    "lalalalalalalallala"
+                    $ daytwoplays += 1
+                    jump daytwo
         
-        "Graveyard":
-            "lalalalalala"
+                "Graveyard":
+                    "lalalalalala"
+                    $ daytwoplays += 1
+                    jump daytwo
         
-        "School":
-            "lallaalalal"
+                "School":
+                    "lallaalalal"
+                    $ daytwoplays += 1
+                    jump daytwo
 
-        "Memorial":
-            "lalalalalal"
+                "Memorial":
+                    "lalalalalal"
+                    $ daytwoplays += 1
+                    jump daytwo
     
+
+    ###NUMBA THREEE
+    $ daythreeplays = 0
+    label daythree:
+        if daythreeplays < 2:
+            menu:
+                #show map
+                omni "Where would you like to go today?"
+
+                "Town Square":
+                    "lalalallaal"
+                    $ daythreeplays += 1
+                    jump daythree
+        
+                "Gardens":
+                    "lalalalalala"
+                    $ daythreeplays += 1
+                    jump daythree
+
+                "Church":
+                    "lalalalalalla"
+                    $ daythreeplays += 1
+                    jump daythree
+        
+                "Grocery Store":
+                    "lallalalalaal"
+                    $ daythreeplays += 1
+                    jump daythree
+
+                "Shopping Center":
+                    "lalalalalalalallala"
+                    $ daythreeplays += 1
+                    jump daythree
+        
+                "Graveyard":
+                    "lalalalalala"
+                    $ daythreeplays += 1
+                    jump daythree
+        
+                "School":
+                    "lallaalalal"
+                    $ daythreeplays += 1
+                    jump daythree
+
+                "Memorial":
+                    "lalalalalal"
+                    $ daythreeplays += 1
+                    jump daythree
             
 
 
-    
+    ##### NUMBO 4 FOURRRR
+    $ dayfourplays = 0
+    label dayfour:
+        if dayfourplays < 2:
+            menu:
+                #show map
+                omni "Where would you like to go today?"
+
+                "Town Square":
+                    "lalalallaal"
+                    $ dayfourplays += 1
+                    jump dayfour
+        
+                "Gardens":
+                    "lalalalalala"
+                    $ dayfourplays += 1
+                    jump dayfour
+
+                "Church":
+                    "lalalalalalla"
+                    $ dayfourplays += 1
+                    jump dayfour
+        
+                "Grocery Store":
+                    "lallalalalaal"
+                    $ dayfourplays += 1
+                    jump dayfour
+
+                "Shopping Center":
+                    "lalalalalalalallala"
+                    $ dayfourplays += 1
+                    jump dayfour
+        
+                "Graveyard":
+                    "lalalalalala"
+                    $ dayfourplays += 1
+                    jump dayfour
+        
+                "School":
+                    "lallaalalal"
+                    $ dayfourplays += 1
+                    jump dayfour
+
+                "Memorial":
+                    "lalalalalal"
+                    $ dayfourplays += 1
+                    jump dayfour
+
+    #### 4.5
+    ##### THIS DAY ISNT REALLLL
+    $ dayhalfplays = 0
+    label dayhalf:
+        if dayhalfplays < 2:
+            menu:
+                #show map
+                omni "Where would you like to go today?"
+
+                "Town Square":
+                    "lalalallaal"
+                    $ dayhalfplays += 1
+                    jump dayhalf
+        
+                "Gardens":
+                    "lalalalalala"
+                    $ dayhalfplays += 1
+                    jump dayhalf
+
+                "Church":
+                    "lalalalalalla"
+                    $ dayhalfplays += 1
+                    jump dayhalf
+        
+                "Grocery Store":
+                    "lallalalalaal"
+                    $ dayhalfplays += 1
+                    jump dayhalf
+
+                "Shopping Center":
+                    "lalalalalalalallala"
+                    $ dayhalfplays += 1
+                    jump dayhalf
+        
+                "Graveyard":
+                    "lalalalalala"
+                    $ dayhalfplays += 1
+                    jump dayhalf
+        
+                "School":
+                    "lallaalalal"
+                    $ dayhalfplays += 1
+                    jump dayhalf
+
+                "Memorial":
+                    "lalalalalal"
+                    $ dayhalfplays += 1
+                    jump dayhalf
+
+
+    ##### NOW THATS MAMBO NUMBER 5 BABYYY
+    ### (a lil bit of jessica in my life)
+    $ dayfiveplays = 0
+    label dayfive:
+        if dayfiveplays < 2:
+            menu:
+                #show map
+                omni "Where would you like to go today?"
+
+                "Town Square":
+                    "lalalallaal"
+                    $ dayfiveplays += 1
+                    jump dayfive
+        
+                "Gardens":
+                    "lalalalalala"
+                    $ dayfiveplays += 1
+                    jump dayfive
+
+                "Church":
+                    "lalalalalalla"
+                    $ dayfiveplays += 1
+                    jump dayfive
+        
+                "Grocery Store":
+                    "lallalalalaal"
+                    $ dayfiveplays += 1
+                    jump dayfive
+
+                "Shopping Center":
+                    "lalalalalalalallala"
+                    $ dayfiveplays += 1
+                    jump dayfive
+        
+                "Graveyard":
+                    "lalalalalala"
+                    $ dayfiveplays += 1
+                    jump dayfive
+        
+                "School":
+                    "lallaalalal"
+                    $ dayfiveplays += 1
+                    jump dayfive
+
+                "Memorial":
+                    "lalalalalal"
+                    $ dayfiveplays += 1
+                    jump dayfive
     
     # This ends the game.
     return

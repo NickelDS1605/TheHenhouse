@@ -2,9 +2,165 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 431: Menu does not contain any choices.
-    menu:
-         ^
+File "game/script.rpy", line 440: expected statement.
+    daytwoplays += 1
+                ^
+
+File "game/script.rpy", line 445: expected statement.
+    daytwoplays += 1
+                ^
+
+File "game/script.rpy", line 450: expected statement.
+    daytwoplays += 1
+                ^
+
+File "game/script.rpy", line 455: expected statement.
+    daytwoplays += 1
+                ^
+
+File "game/script.rpy", line 460: expected statement.
+    daytwoplays += 1
+                ^
+
+File "game/script.rpy", line 465: expected statement.
+    daytwoplays += 1
+                ^
+
+File "game/script.rpy", line 470: expected statement.
+    daytwoplays += 1
+                ^
+
+File "game/script.rpy", line 475: expected statement.
+    daytwoplays += 1
+                ^
+
+File "game/script.rpy", line 489: expected statement.
+    daythreeplays += 1
+                  ^
+
+File "game/script.rpy", line 494: expected statement.
+    daythreeplays += 1
+                  ^
+
+File "game/script.rpy", line 499: expected statement.
+    daythreeplays += 1
+                  ^
+
+File "game/script.rpy", line 504: expected statement.
+    daythreeplays += 1
+                  ^
+
+File "game/script.rpy", line 509: expected statement.
+    daythreeplays += 1
+                  ^
+
+File "game/script.rpy", line 514: expected statement.
+    daythreeplays += 1
+                  ^
+
+File "game/script.rpy", line 519: expected statement.
+    daythreeplays += 1
+                  ^
+
+File "game/script.rpy", line 524: expected statement.
+    daythreeplays += 1
+                  ^
+
+File "game/script.rpy", line 539: expected statement.
+    dayfourplays += 1
+                 ^
+
+File "game/script.rpy", line 544: expected statement.
+    dayfourplays += 1
+                 ^
+
+File "game/script.rpy", line 549: expected statement.
+    dayfourplays += 1
+                 ^
+
+File "game/script.rpy", line 554: expected statement.
+    dayfourplays += 1
+                 ^
+
+File "game/script.rpy", line 559: expected statement.
+    dayfourplays += 1
+                 ^
+
+File "game/script.rpy", line 564: expected statement.
+    dayfourplays += 1
+                 ^
+
+File "game/script.rpy", line 569: expected statement.
+    dayfourplays += 1
+                 ^
+
+File "game/script.rpy", line 574: expected statement.
+    dayfourplays += 1
+                 ^
+
+File "game/script.rpy", line 588: expected statement.
+    dayhalfplays += 1
+                 ^
+
+File "game/script.rpy", line 593: expected statement.
+    dayhalfplays += 1
+                 ^
+
+File "game/script.rpy", line 598: expected statement.
+    dayhalfplays += 1
+                 ^
+
+File "game/script.rpy", line 603: expected statement.
+    dayhalfplays += 1
+                 ^
+
+File "game/script.rpy", line 608: expected statement.
+    dayhalfplays += 1
+                 ^
+
+File "game/script.rpy", line 613: expected statement.
+    dayhalfplays += 1
+                 ^
+
+File "game/script.rpy", line 618: expected statement.
+    dayhalfplays += 1
+                 ^
+
+File "game/script.rpy", line 623: expected statement.
+    dayhalfplays += 1
+                 ^
+
+File "game/script.rpy", line 638: expected statement.
+    dayfiveplays += 1
+                 ^
+
+File "game/script.rpy", line 643: expected statement.
+    dayfiveplays += 1
+                 ^
+
+File "game/script.rpy", line 648: expected statement.
+    dayfiveplays += 1
+                 ^
+
+File "game/script.rpy", line 653: expected statement.
+    dayfiveplays += 1
+                 ^
+
+File "game/script.rpy", line 658: expected statement.
+    dayfiveplays += 1
+                 ^
+
+File "game/script.rpy", line 663: expected statement.
+    dayfiveplays += 1
+                 ^
+
+File "game/script.rpy", line 668: expected statement.
+    dayfiveplays += 1
+                 ^
+
+File "game/script.rpy", line 673: expected statement.
+    dayfiveplays += 1
+                 ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Fri Oct  7 12:02:29 2022
+Mon Oct 10 11:56:10 2022
