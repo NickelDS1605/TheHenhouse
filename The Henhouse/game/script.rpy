@@ -26,7 +26,8 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+    image neutralbella = "NeutralBella.png"
+    show neutralbella
 
     # This is the introduction.
 
@@ -420,7 +421,7 @@ label start:
                     
                 "How do I restart the game?":
                     omni "If you wish to restart at any point you can open the file The Henhouse is downloaded under and delete all save files in the saves folder."
-                    "(HINT: If you can't find anyone each day we recommend restarting the game and going to different places!)"
+                    "(HINT: If you can't find anyone each day we recommend clicking the back button and going to different places!)"
                     jump questionmenu
                 
                 "I have no more questions.":
@@ -429,6 +430,14 @@ label start:
     
     ###DAY 2 PLAYTHROUGH TIME
     $ daytwoplays = 0
+    $ visitedTown = False
+    $ visitedGarden = False
+    $ visitedChurch = False
+    $ visitedStore = False
+    $ visitedShop = False
+    $ visitedGrave = False
+    $ visitedSchool = False
+    $ visitedMemorial = False
     label daytwo:
         if daytwoplays < 2:
             menu:
@@ -436,242 +445,206 @@ label start:
                 omni "Where would you like to go today?"
 
                 "Town Square":
-                    "lalalallaal"
-                    $ daytwoplays += 1
-                    jump daytwo
+                    if visitedTown:
+                        omni "You've already been here"
+                        jump daytwo
+                    else:
+                        #facing the fountain
+                        $ visitedTown = True
+                        $ daytwoplays += 1
+                        jump daytwo
         
                 "Gardens":
                     "lalalalalala"
-                    $ daytwoplays += 1
-                    jump daytwo
+                    if visitedGarden:
+                        omni "You've already been here"
+                        jump daytwo
+                    else:
+                        $ visitedGarden = True
+                        $ daytwoplays += 1
+                        jump daytwo
 
                 "Church":
-                    "lalalalalalla"
-                    $ daytwoplays += 1
-                    jump daytwo
+                    if visitedChurch:
+                        omni "You've already been here"
+                        jump daytwo
+                    else:
+                        $ visitedChurch = True
+                        $ daytwoplays += 1
+                        "We're going to meet the pastor"
+                        "he's very excited to meet you"
+                        "ask to officiate wedding for lucky couple?"
+                        jump daytwo
         
                 "Grocery Store":
                     "lallalalalaal"
-                    $ daytwoplays += 1
-                    jump daytwo
+                    if visitedStore:
+                        omni "You've already been here"
+                        jump daytwo
+                    else:
+                        $ visitedStore = True
+                        $ daytwoplays += 1
+                        jump daytwo
 
                 "Shopping Center":
                     "lalalalalalalallala"
-                    $ daytwoplays += 1
-                    jump daytwo
+                    if visitedShop:
+                        omni "You've already been here"
+                        jump daytwo
+                    else:
+                        $ visitedShop = True
+                        $ daytwoplays += 1
+                        jump daytwo
         
                 "Graveyard":
-                    "lalalalalala"
-                    $ daytwoplays += 1
-                    jump daytwo
-        
+                    if visitedGrave:
+                        omni "You've already been here"
+                        jump daytwo
+                    else:
+                        "we're walking around so so much"
+                        "recognize names"
+                        "bird names as well????"
+                        "curious"
+                        $ visitedGrave = True
+                        $ daytwoplays += 1
+                        jump daytwo
+
+                ##finished !!!
                 "School":
-                    "lallaalalal"
-                    $ daytwoplays += 1
-                    jump daytwo
+                    if visitedSchool:
+                        omni "You've already been here"
+                        jump daytwo
+                    else:
+                        #show schoolroom
+                        omni "You literally met zero kids yesterday."
+                        omni "Why would you pick this option????"
+                        $ visitedSchool = True
+                        $ daytwoplays += 1
+                        jump daytwo
 
                 "Memorial":
-                    "lalalalalal"
-                    $ daytwoplays += 1
-                    jump daytwo
+                    if visitedMemorial:
+                        "we're gunna put special info here"
+                    else:
+                        $ visitedMemorial = True
+                        "error"
+                        $ daytwoplays += 1
+                        jump daytwo
     
 
     ###NUMBA THREEE
     $ daythreeplays = 0
     label daythree:
+        $ visitedTown = False
+        $ visitedGarden = False
+        $ visitedChurch = False
+        $ visitedStore = False
+        $ visitedShop = False
+        $ visitedGrave = False
+        $ visitedSchool = False
+        $ visitedMemorial = False
         if daythreeplays < 2:
             menu:
                 #show map
                 omni "Where would you like to go today?"
 
                 "Town Square":
-                    "lalalallaal"
-                    $ daythreeplays += 1
-                    jump daythree
+                    if visitedTown:
+                        omni "Isn't this place a little too familiar for you?"
+                        jump daythree
+                    else:
+                        "lalalallaal"
+                        $ visitedTown = True
+                        $ daythreeplays += 1
+                        jump daythree
         
                 "Gardens":
-                    "lalalalalala"
-                    $ daythreeplays += 1
-                    jump daythree
+                    if visitedGarden:
+                        omni "Isn't this place a little too familiar for you?"
+                        jump daythree
+                    else:
+                        "lalalalalala"
+                        $ visitedGarden = True
+                        $ daythreeplays += 1
+                        jump daythree
 
                 "Church":
-                    "lalalalalalla"
-                    $ daythreeplays += 1
-                    jump daythree
+                    if visitedChurch:
+                        omni "Isn't this place a little too familiar for you?"
+                        jump daythree
+                    else:
+                        "lalalalalalla"
+                        $ visitedChurch = True
+                        $ daythreeplays += 1
+                        jump daythree
         
                 "Grocery Store":
-                    "lallalalalaal"
-                    $ daythreeplays += 1
-                    jump daythree
+                    if visitedStore:
+                        omni "Isn't this place a little too familiar for you?"
+                        jump daythree
+                    else:
+                        "lallalalalaal"
+                        $ visitedStore = True
+                        $ daythreeplays += 1
+                        jump daythree
 
                 "Shopping Center":
-                    "lalalalalalalallala"
-                    $ daythreeplays += 1
-                    jump daythree
+                    if visitedShop:
+                        omni "Isn't this place a little too familiar for you?"
+                        jump daythree
+                    else:
+                        "lalalalalalalallala"
+                        $ visitedShop = True
+                        $ daythreeplays += 1
+                        jump daythree
         
                 "Graveyard":
-                    "lalalalalala"
-                    $ daythreeplays += 1
-                    jump daythree
+                    if visitedGrave:
+                        omni "Isn't this place a little too familiar for you?"
+                        jump daythree
+                    else:
+                        "lalalalalala"
+                        $ visitedGrave = True
+                        $ daythreeplays += 1
+                        jump daythree
         
                 "School":
-                    "lallaalalal"
-                    $ daythreeplays += 1
-                    jump daythree
+                    if visitedSchool:
+                        omni "Isn't this place a little too familiar for you?"
+                        jump daythree
+                    else:
+                        "lalalalalal"
+                        $ visitedSchool = True
+                        $ daythreeplays += 1
+                        jump daythree
 
                 "Memorial":
-                    "lalalalalal"
-                    $ daythreeplays += 1
-                    jump daythree
+                    if visitedMemorial:
+                        omni "I'm not quite sure I'm allowed to let you in here."
+                        omni "Not after what happened last time..."
+                        jump daythree
+                    else:
+                        "error"
+                        $ visitedMemorial = True
+                        $ daythreeplays += 1
+                        jump daythree
             
 
 
     ##### NUMBO 4 FOURRRR
     $ dayfourplays = 0
-    label dayfour:
-        if dayfourplays < 2:
-            menu:
-                #show map
-                omni "Where would you like to go today?"
-
-                "Town Square":
-                    "lalalallaal"
-                    $ dayfourplays += 1
-                    jump dayfour
-        
-                "Gardens":
-                    "lalalalalala"
-                    $ dayfourplays += 1
-                    jump dayfour
-
-                "Church":
-                    "lalalalalalla"
-                    $ dayfourplays += 1
-                    jump dayfour
-        
-                "Grocery Store":
-                    "lallalalalaal"
-                    $ dayfourplays += 1
-                    jump dayfour
-
-                "Shopping Center":
-                    "lalalalalalalallala"
-                    $ dayfourplays += 1
-                    jump dayfour
-        
-                "Graveyard":
-                    "lalalalalala"
-                    $ dayfourplays += 1
-                    jump dayfour
-        
-                "School":
-                    "lallaalalal"
-                    $ dayfourplays += 1
-                    jump dayfour
-
-                "Memorial":
-                    "lalalalalal"
-                    $ dayfourplays += 1
-                    jump dayfour
+    ##label dayfour:
 
     #### 4.5
     ##### THIS DAY ISNT REALLLL
     $ dayhalfplays = 0
-    label dayhalf:
-        if dayhalfplays < 2:
-            menu:
-                #show map
-                omni "Where would you like to go today?"
-
-                "Town Square":
-                    "lalalallaal"
-                    $ dayhalfplays += 1
-                    jump dayhalf
+    ##label dayhalf:
         
-                "Gardens":
-                    "lalalalalala"
-                    $ dayhalfplays += 1
-                    jump dayhalf
-
-                "Church":
-                    "lalalalalalla"
-                    $ dayhalfplays += 1
-                    jump dayhalf
-        
-                "Grocery Store":
-                    "lallalalalaal"
-                    $ dayhalfplays += 1
-                    jump dayhalf
-
-                "Shopping Center":
-                    "lalalalalalalallala"
-                    $ dayhalfplays += 1
-                    jump dayhalf
-        
-                "Graveyard":
-                    "lalalalalala"
-                    $ dayhalfplays += 1
-                    jump dayhalf
-        
-                "School":
-                    "lallaalalal"
-                    $ dayhalfplays += 1
-                    jump dayhalf
-
-                "Memorial":
-                    "lalalalalal"
-                    $ dayhalfplays += 1
-                    jump dayhalf
-
-
     ##### NOW THATS MAMBO NUMBER 5 BABYYY
     ### (a lil bit of jessica in my life)
     $ dayfiveplays = 0
-    label dayfive:
-        if dayfiveplays < 2:
-            menu:
-                #show map
-                omni "Where would you like to go today?"
-
-                "Town Square":
-                    "lalalallaal"
-                    $ dayfiveplays += 1
-                    jump dayfive
+    ##label dayfive:
         
-                "Gardens":
-                    "lalalalalala"
-                    $ dayfiveplays += 1
-                    jump dayfive
-
-                "Church":
-                    "lalalalalalla"
-                    $ dayfiveplays += 1
-                    jump dayfive
-        
-                "Grocery Store":
-                    "lallalalalaal"
-                    $ dayfiveplays += 1
-                    jump dayfive
-
-                "Shopping Center":
-                    "lalalalalalalallala"
-                    $ dayfiveplays += 1
-                    jump dayfive
-        
-                "Graveyard":
-                    "lalalalalala"
-                    $ dayfiveplays += 1
-                    jump dayfive
-        
-                "School":
-                    "lallaalalal"
-                    $ dayfiveplays += 1
-                    jump dayfive
-
-                "Memorial":
-                    "lalalalalal"
-                    $ dayfiveplays += 1
-                    jump dayfive
     
     # This ends the game.
     return
