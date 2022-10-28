@@ -26,8 +26,15 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
+    #bella avatars
     image neutralbella = "NeutralBella.png"
-    show neutralbella
+
+    #andy avatars
+    image neutralandy =  "NeutralAndy.png"
+    image freakandy = "FreakOutAndy.png"
+
+    #brooke avatars
+    image neutralbrooke = "BrookeNeutral.png"
 
     # This is the introduction.
 
@@ -238,6 +245,7 @@ label start:
     "I think the path led this way..."
     #walking
     #scene change to middle of town
+    show neutralbrooke
     "Ah!"
     "She should know something."
     me "Hi, my name is %(player_name)s, I'm new in town."
@@ -264,7 +272,7 @@ label start:
             q "Oh..."
             q "The house is at the end of the yellow path down there."
             #she dissapears ish (?)
-
+    hide neutralbrooke
     "Time to go find my house!"
     "I wonder how she knew where it was?"
     #walking walking walking
@@ -275,8 +283,10 @@ label start:
     "Wh"
     "What was that"
     #oof ah fall
+    show freakandy
     me "S-Sir?"
     me "Are you alright?"
+    show neutralandy
     q "Oh yes thank you!"
     q "I'm afraid my rose bushes aren't agreeing with me tonight."
     # andy smiles + chuckles?
@@ -322,6 +332,7 @@ label start:
         #dissapears into rose bushes
     else:
         andy "Goodnight."
+    hide neutralandy
     
     #show front door of house
     "It looks cute"
