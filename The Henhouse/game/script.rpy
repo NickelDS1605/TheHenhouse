@@ -36,6 +36,10 @@ label start:
     #brooke avatars
     image neutralbrooke = "BrookeNeutral.png"
 
+    #isha avatars
+    image upsetisha = "isha_upset.png"
+    image one_isha_smile = "day1_ishasmile.png"
+
     # This is the introduction.
 
     #input for name
@@ -56,18 +60,18 @@ label start:
     
 
     #Isha shows up
-    #show isha worry
+    show upsetisha
 
     #think this
-    "What a strange woman"
+    "She looks upset."
     "Perhaps we could help her?"
 
     #outloud
     me "Ma'am are you alright?"
 
     #isha responds
-    q "I'm so sorry I didn't see you there!!"
-    #show isha cry
+    q "I'm so sorry!!! I didn't even see you there!!"
+
 
     me "Hey hey it's ok"
     me "What's wrong miss?"
@@ -77,11 +81,12 @@ label start:
     #cries for a little bit
     q "wait"
     q "I'm being very rude sorry"
-    #show isha smile
+    hide upsetisha
+    show day1_ishasmile
     q "Apologies for my outburst, my name is Isha Woodcock."
 
     #internal dialogue bc that was random
-    "That was... certainly unexpected"
+    "Hmm... that was weird right?"
     #respond !!
     me "Hello Isha, it's very nice to meet you."
     isha "We don't get many strangers around these parts, what are you doing around here?"
@@ -95,6 +100,7 @@ label start:
     isha "Ah I see! This is simple. All you have to do is walk down the xœìÝÏëäÌ¬ð¶ó° and head towards _ˆ×f ‡Ë°‡Å Ø]"
 
     me "Uhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+    hide day1_ishasmile
     #insert font change + scene change
     omni "run"
     #abrupt scene change again to forest/town path
