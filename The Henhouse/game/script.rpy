@@ -26,6 +26,12 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
+
+    image omnic = "omni.png"
+
+    #edward avatars
+    image neutraledward = "EdwardNeutral.png"
+    
     #bella avatars
     image neutralbella = "NeutralBella.png"
 
@@ -47,6 +53,8 @@ label start:
     #removes extra spaces
     $ player_name = player_name.strip()
 
+    show omnic 
+
     omni "It's finally time, %(player_name)s!"
 
     omni "Today, you are moving into your new home."
@@ -55,6 +63,8 @@ label start:
 
 
     omni "Here is the map to your house, good luck!"
+
+    hide omnic
 
     #Personal dialog as you walk along to the shops
     
@@ -129,7 +139,9 @@ label start:
     label errorleave:
         if error:
             #insert scene change
+            show omnic
             omni "Go back"
+            hide omnic
             $ nextchoice = True
         
 
@@ -151,6 +163,8 @@ label start:
     "Hmm..."
     "Maybe they can help me?"
 
+    show neutralbella at left
+    show neutraledward at right
     #walk towards em
     "He-Hello?"
     #they turn towards you
@@ -198,15 +212,20 @@ label start:
         bella "Yes! Be sure to follow the map, and not stray from the path."
         bella "Also avoid strangers! It can be dangerous out here."
         me "Thank you for all your advice! I'll be sure to be safe."
+        hide neutralbella
+        hide neutraledward
         #scene change
         "Could they have known about Isha?"
         "Maybe they can help me figure this out"
     else:
+        hide neutralbella
+        hide neutraledward
         #scene change
         $ funny = True
         "I can't tell him I don't know"
         "He looks dangerous"
         "I have to get out of here."
+        show omnic
         omni "Why do you want to leave?"
         omni "We haven't done anything to hurt you have we?"
         menu:
@@ -221,6 +240,7 @@ label start:
         me "I am not happy here, please let me go."
         omni "I'm afraid that isn't possible."
         omni "We still have so much to do."
+        hide omnic
         #scene change, reset to before
         "I can't stay here"
 
