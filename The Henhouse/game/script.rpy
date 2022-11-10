@@ -20,7 +20,7 @@ label start:
     # add a file (named either "bg room.png" or "bg room.jpg") to the
     # images directory to show it.
 
-    scene bg room
+    scene birdhousewall
 
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
@@ -312,6 +312,7 @@ label start:
     show freakandy
     me "S-Sir?"
     me "Are you alright?"
+    hide freakandy
     show neutralandy
     q "Oh yes thank you!"
     q "I'm afraid my rose bushes aren't agreeing with me tonight."
@@ -411,6 +412,7 @@ label start:
     #show bedroom
     #birds chirping >:)
     #walk to kitchen
+    show omnic
     omni "Hello %(player_name)s!"
     omni "Welcome to the Henhouse!"
     omni "Although it isn't our intention to control your every move, we do have some rules and regulations in place to keep you safe."
@@ -426,6 +428,7 @@ label start:
             $ question = True
         "No":
             omni "Oh my! Good luck today!"
+            hide omnic
             
             
     
@@ -464,6 +467,7 @@ label start:
                 "I have no more questions.":
                     omni "Great!"
                     omni "Let's get started."
+                    hide omnic
     
     ###DAY 2 PLAYTHROUGH TIME
     $ daytwoplays = 0
@@ -477,8 +481,10 @@ label start:
     $ visitedMemorial = False
     label daytwo:
         if daytwoplays < 2:
+            show omnic
             menu:
                 #show map
+                
                 omni "Where would you like to go today?"
 
                 "Town Square":
@@ -486,6 +492,7 @@ label start:
                         omni "You've already been here"
                         jump daytwo
                     else:
+                        hide omnic
                         #facing the fountain
                         $ visitedTown = True
                         $ daytwoplays += 1
@@ -497,6 +504,7 @@ label start:
                         omni "You've already been here"
                         jump daytwo
                     else:
+                        hide omnic
                         $ visitedGarden = True
                         $ daytwoplays += 1
                         jump daytwo
@@ -506,6 +514,7 @@ label start:
                         omni "You've already been here"
                         jump daytwo
                     else:
+                        hide omnic
                         $ visitedChurch = True
                         $ daytwoplays += 1
                         "We're going to meet the pastor"
@@ -519,6 +528,7 @@ label start:
                         omni "You've already been here"
                         jump daytwo
                     else:
+                        hide omnic
                         $ visitedStore = True
                         $ daytwoplays += 1
                         jump daytwo
@@ -529,6 +539,7 @@ label start:
                         omni "You've already been here"
                         jump daytwo
                     else:
+                        hide omnic
                         $ visitedShop = True
                         $ daytwoplays += 1
                         jump daytwo
@@ -538,6 +549,7 @@ label start:
                         omni "You've already been here"
                         jump daytwo
                     else:
+                        hide omnic
                         "we're walking around so so much"
                         "recognize names"
                         "bird names as well????"
@@ -563,6 +575,7 @@ label start:
                     if visitedMemorial:
                         "we're gunna put special info here"
                     else:
+                        hide omnic
                         $ visitedMemorial = True
                         "error"
                         $ daytwoplays += 1
