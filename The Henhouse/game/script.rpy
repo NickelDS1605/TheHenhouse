@@ -46,6 +46,8 @@ label start:
     image upsetisha = "isha_upset.png"
     image one_isha_smile = "day1_ishasmile.png"
 
+    #miscellaneous characters
+
     # This is the introduction.
 
     #input for name
@@ -61,20 +63,20 @@ label start:
 
     omni "Aren't you excited??"
 
-
+    #show map
     omni "Here is the map to your house, good luck!"
 
     hide omnic
 
     #Personal dialog as you walk along to the shops
-    
+    scene bg room
 
     #Isha shows up
     show upsetisha
 
     #think this
     "She looks upset."
-    "Perhaps we could help her?"
+    "Perhaps we can help her?"
 
     #outloud
     me "Ma'am are you alright?"
@@ -89,14 +91,12 @@ label start:
     q "My store is supposed to open this week but my delivery of bird seed still isnt here"
     q "If I don't get it in the next two days, I'm never going to get this shop open."
     #cries for a little bit
-    q "wait"
-    q "I'm being very rude sorry"
     hide upsetisha
     show day1_ishasmile
+    q "Okay. All better now."
     q "Apologies for my outburst, my name is Isha Woodcock."
 
     #internal dialogue bc that was random
-    "Hmm... that was weird right?"
     #respond !!
     me "Hello Isha, it's very nice to meet you."
     isha "We don't get many strangers around these parts, what are you doing around here?"
@@ -112,8 +112,10 @@ label start:
     me "Uhhhhhhhhhhhhhhhhhhhhhhhhhhh"
     hide day1_ishasmile
     #insert font change + scene change
+    show omnic
     omni "run"
     #abrupt scene change again to forest/town path
+    hide omnic
 
     "What just happened?"
     #insert a look look maybe?
@@ -564,9 +566,11 @@ label start:
                         omni "You've already been here"
                         jump daytwo
                     else:
-                        #show schoolroom
+                        scene schoolclassroom
+                        show omnic
                         omni "You literally met zero kids yesterday."
                         omni "Why would you pick this option????"
+                        omni "Being that it's the first day and I'm feeling nice I suggest you go back and pick again."
                         $ visitedSchool = True
                         $ daytwoplays += 1
                         jump daytwo
