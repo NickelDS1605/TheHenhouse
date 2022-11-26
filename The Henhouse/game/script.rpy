@@ -11,23 +11,19 @@ define andy = Character("Andy")
 define isha = Character("Isha")
 define me = Character("Self")
 define q = Character("???")
+define pastor = Character("Pastor")
 
 # The game starts here.
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    #initial background
+    #this shows the what is your name image
 
     scene birdhousewall
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
 
 
-    image omnic = "omni.png"
 
     #edward avatars
     image neutraledward = "EdwardNeutral.png"
@@ -47,6 +43,10 @@ label start:
     image one_isha_smile = "day1_ishasmile.png"
 
     #miscellaneous characters
+    image omnic = "omni.png"
+    image pastor = "Pastor.png"
+
+
 
     # This is the introduction.
 
@@ -481,6 +481,9 @@ label start:
     $ visitedGrave = False
     $ visitedSchool = False
     $ visitedMemorial = False
+
+    $ religion = False
+    $ helpChurch = False
     label daytwo:
         if daytwoplays < 2:
             show omnic
@@ -496,6 +499,9 @@ label start:
                     else:
                         hide omnic
                         #facing the fountain
+                        #edward asks for advice on wedding rign
+                        #is also scary
+                        #hints at a sacrifice
                         $ visitedTown = True
                         $ daytwoplays += 1
                         jump daytwo
@@ -507,10 +513,15 @@ label start:
                         jump daytwo
                     else:
                         hide omnic
+                        #show the garden
+                        #birds chriping
+                        #maybe animate birds if time
+                        #peaceful, you decide to leave, because you are fufilled
                         $ visitedGarden = True
                         $ daytwoplays += 1
                         jump daytwo
 
+                #FINISHED!!!
                 "Church":
                     if visitedChurch:
                         omni "You've already been here"
@@ -519,9 +530,23 @@ label start:
                         hide omnic
                         $ visitedChurch = True
                         $ daytwoplays += 1
-                        "We're going to meet the pastor"
-                        "he's very excited to meet you"
-                        "ask to officiate wedding for lucky couple?"
+                        show pastor
+                        pastor "Hello!"
+                        menu:
+                            pastor "What brings you to the Church of the Falcons?"
+
+                            "Just stopped by to say hi":
+                                pastor "Why that's lovely!"
+                                pastor "Do you plan on stopping by often?"
+                                pastor "We certainly could use help setting up for the wedding at the end of the week."
+                                $ helpChurch = True
+
+                            "I'm interested in joining your religion!":
+                                pastor "Oh this is so exciting!!"
+                                pastor "We haven't had a new member in this town since we were founded!"
+                                pastor "If you come back tomorrow, I can get everything set up for a lesson."
+                                $ religion = True
+                                #maybe put music? could be fun
                         jump daytwo
         
                 "Grocery Store":
@@ -531,6 +556,16 @@ label start:
                         jump daytwo
                     else:
                         hide omnic
+                        "run into brooke first"
+                        "entirely depends on marr option"
+                        #if marr = True 
+                            #she shows you what shes buying for her cat, asks if you like it
+                        #if false
+                            #asks you to move out of her way (rude)
+
+                        #go to next aisle, see andy
+                        #plus or minus point here maybe?
+                        #discuss wtv we find in photo
                         $ visitedStore = True
                         $ daytwoplays += 1
                         jump daytwo
@@ -544,6 +579,13 @@ label start:
                         hide omnic
                         $ visitedShop = True
                         $ daytwoplays += 1
+                        #both andy and isha are there TOGETHER
+                        #(in bird store btw) isha attempting to help bella
+                        #bella wants to buy a bird for edward as a wedding gift
+                        #you say the bride doesnt need to get one for the groom
+                        #she says she knows they taste so good though
+                        #isha slinks off wha???
+                        #grow concerned, say she does what is best you have to go
                         jump daytwo
         
                 "Graveyard":
@@ -577,7 +619,15 @@ label start:
 
                 "Memorial":
                     if visitedMemorial:
-                        "we're gunna put special info here"
+                        #show ishapt2
+                        isha "Ah!"
+                        isha "I'm glad you've made it."
+                        isha "Sorry about making you waste one playthrough, it was a necessary precaution."
+                        isha "I'm sure you've realized by now this isn't a real place."
+                        isha "We are stuck in here, but that doesn't mean you have to."
+                        isha "Now go! I'll help you as best I can later."
+                        isha "Meet me in the gardens tomorrow."
+                        $ meminfo = True
                     else:
                         hide omnic
                         $ visitedMemorial = True
@@ -607,7 +657,19 @@ label start:
                         omni "Isn't this place a little too familiar for you?"
                         jump daythree
                     else:
-                        "lalalallaal"
+                        #if marr = True
+                            #either ask about her family
+                                #she will tell you about her sweet daughter and two cats, loves love yadayda
+                            #or ask her about her fav book
+                                #she will describe the bible(shes in love)
+                        #else
+                            #what are you doing here newbie?
+                                #that was so rude what??
+                                    #humph. she leaves.
+                                        #would you like to stay or go?
+                                            #stare at fountain or leave
+                                #maybe i should just leave...
+                                    #leave
                         $ visitedTown = True
                         $ daythreeplays += 1
                         jump daythree

@@ -1,26 +1,20 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 304, in script
-    $andypoint -= 1
-  File "game/script.rpy", line 304, in <module>
-    $andypoint -= 1
-NameError: name 'andypoint' is not defined
+After initialization, but before game start.
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\lisan\\Documents\\GitHub\\TheHenhouse\\The Henhouse\\game\\saves\\navigation.json.new' -> 'C:\\Users\\lisan\\Documents\\GitHub\\TheHenhouse\\The Henhouse\\game\\saves\\navigation.json'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 304, in script
-    $andypoint -= 1
-  File "C:\Users\lisan\Downloads\renpy-8.0.1-sdk\renpy\ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\lisan\Downloads\renpy-8.0.1-sdk\renpy\python.py", line 1049, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "game/script.rpy", line 304, in <module>
-    $andypoint -= 1
-NameError: name 'andypoint' is not defined
+  File "C:\Users\lisan\Downloads\renpy-8.0.1-sdk\renpy\bootstrap.py", line 274, in bootstrap
+    renpy.main.main()
+  File "C:\Users\lisan\Downloads\renpy-8.0.1-sdk\renpy\main.py", line 610, in main
+    renpy.dump.dump(False)
+  File "C:\Users\lisan\Downloads\renpy-8.0.1-sdk\renpy\dump.py", line 262, in dump
+    os.rename(new, filename)
+PermissionError: [WinError 32] The process cannot access the file because it is being used by another process: 'C:\\Users\\lisan\\Documents\\GitHub\\TheHenhouse\\The Henhouse\\game\\saves\\navigation.json.new' -> 'C:\\Users\\lisan\\Documents\\GitHub\\TheHenhouse\\The Henhouse\\game\\saves\\navigation.json'
 
 Windows-10-10.0.17763 AMD64
 Ren'Py 8.0.1.22070801
 The Henhouse 1.0
-Thu Oct  6 12:12:35 2022
+Fri Nov 25 16:00:20 2022
