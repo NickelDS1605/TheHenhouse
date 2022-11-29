@@ -41,6 +41,7 @@ label start:
     #isha avatars
     image upsetisha = "isha_upset.png"
     image one_isha_smile = "day1_ishasmile.png"
+    image two_isha_memorial = "day2memorial_isha.png"
 
     #miscellaneous characters
     image omnic = "omni.png"
@@ -63,15 +64,20 @@ label start:
 
     omni "Aren't you excited??"
 
-    #show map
+    scene map
     omni "Here is the map to your house, good luck!"
+    hide omnic
+    ""
 
     hide omnic
 
-    #Personal dialog as you walk along to the shops
-    scene bg room
+    ""
+    "Alright so first I should walk up I think."
+    "And go into the shopping center?"
+    "Let's see where I go!"
 
-    #Isha shows up
+    #we turn into the shopping center
+    scene shops
     show upsetisha
 
     #think this
@@ -91,8 +97,11 @@ label start:
     q "My store is supposed to open this week but my delivery of bird seed still isnt here"
     q "If I don't get it in the next two days, I'm never going to get this shop open."
     #cries for a little bit
+    ""
+    ""
     hide upsetisha
     show day1_ishasmile
+    ""
     q "Okay. All better now."
     q "Apologies for my outburst, my name is Isha Woodcock."
 
@@ -105,16 +114,19 @@ label start:
     me "I'm trying to find my house, but I don't know how to read the map"
     me "Can you help?"
 
-    #show map
+    
     isha "Oh why of course! Let me see it."
+    scene map
     isha "Ah I see! This is simple. All you have to do is walk down the xœìÝÏëäÌ¬ð¶ó° and head towards _ˆ×f ‡Ë°‡Å Ø]"
 
     me "Uhhhhhhhhhhhhhhhhhhhhhhhhhhh"
     hide day1_ishasmile
     #insert font change + scene change
+    scene scary
     show omnic
     omni "run"
     #abrupt scene change again to forest/town path
+    show map
     hide omnic
 
     "What just happened?"
@@ -124,6 +136,7 @@ label start:
     #choice here!!!
     $ error = False
     menu: 
+        
         "What should I do?"
 
         "Try to leave":
@@ -134,13 +147,14 @@ label start:
             jump errorleave
 
         "Follow map":
+            scene map
             "If I get to the town I might be able to find people who can help me."
             
             
     $ nextchoice = False
     label errorleave:
         if error:
-            #insert scene change
+            show scary
             show omnic
             omni "Go back"
             hide omnic
@@ -162,13 +176,20 @@ label start:
     #just keep walking just keep walking
     #pause
     #two vamps show up in distance
+    show map
+    ""
+    ""
+    ""
+
+    scene field
+    show neutralbella at left
+    show neutraledward at right
     "Hmm..."
     "Maybe they can help me?"
 
-    show neutralbella at left
-    show neutraledward at right
+    
     #walk towards em
-    "He-Hello?"
+    me "He-Hello?"
     #they turn towards you
     bella "Omg hi!! Are you the new resident we've heard so much about??"
 
@@ -216,17 +237,17 @@ label start:
         me "Thank you for all your advice! I'll be sure to be safe."
         hide neutralbella
         hide neutraledward
-        #scene change
+        scene map
         "Could they have known about Isha?"
         "Maybe they can help me figure this out"
     else:
         hide neutralbella
         hide neutraledward
-        #scene change
         $ funny = True
         "I can't tell him I don't know"
         "He looks dangerous"
         "I have to get out of here."
+        scene scary
         show omnic
         omni "Why do you want to leave?"
         omni "We haven't done anything to hurt you have we?"
@@ -243,7 +264,7 @@ label start:
         omni "I'm afraid that isn't possible."
         omni "We still have so much to do."
         hide omnic
-        #scene change, reset to before
+        scene map
         "I can't stay here"
 
     
@@ -257,6 +278,10 @@ label start:
     #following the map
     #suddenly!!!!
     #map blows away
+    ""
+    ""
+    ""
+    scene scary
     me "NOO!"
     "The map moves too fast for me to catch it"
     "Crap!"
@@ -273,6 +298,7 @@ label start:
     "I think the path led this way..."
     #walking
     #scene change to middle of town
+    scene bench
     show neutralbrooke
     "Ah!"
     "She should know something."
@@ -292,22 +318,48 @@ label start:
         "Sure":
             $ brookemarr = True
             # TODO: yea marriage
+            hide neutral brooke
+            scene fountain
+            ""
+            "Oh my God."
+            "How"
+            me "Where am I?"
+            q "Do not worry dear, you are safe here."
+            "It's so peaceful"
+            "It feels almost magical."
+            ""
+            ""
+            ""
+            ""
+            ""
+            scene bench
+            show neutralbrooke
+            q "Thank you for that."
+            q "I hope to see much more of you during your stay."
+            q "Your house should be back towards where you came from."
+            
 
         "No, I need to get home.":
             $ brookemarr = False
             #show her being upset / or character thing she has no chagne on her face
             #decide later
             q "Oh..."
-            q "The house is at the end of the yellow path down there."
+            q "The house back where you came from."
             #she dissapears ish (?)
     hide neutralbrooke
+    scene field
     "Time to go find my house!"
     "I wonder how she knew where it was?"
     #walking walking walking
     #if marr = false is longer
+    ""
     "Wait I never got her name!"
     "Dang it."
+    "Time to keep moving I suppose."
+    ""
+    scene bushes
     #rustle rustle
+    #play audio "rustling.mp3"
     "Wh"
     "What was that"
     #oof ah fall
@@ -349,10 +401,9 @@ label start:
     andy "Oh! You must be my new neighbor! How are you getting settled in?"
     me "Actually I'm trying to find my house right now !"
     me "Do you know where it is?"
-    # TODO: insert color namew of house here
-    andy "Of course! You're the ## house right here."
-    #move background left
-    #show house
+    
+    andy "Of course! You're the house right to the left of mine!."
+    andy "Just go on 20 steps that way and you cant miss it."
     me "OMG Thank you!"
     me "I've been traveling all day and I'm really tired so I think I better go head inside."
     if night:
@@ -363,6 +414,7 @@ label start:
         andy "Goodnight."
     hide neutralandy
     
+    scene house
     #show front door of house
     "It looks cute"
     #show interior of houes?
@@ -374,44 +426,34 @@ label start:
     omni "Well I can't watch you all the time can I? I have a life you know."
     me "WHAT"
     omni "Anyways, you still haven't answered."
-    # TODO: learn how to save background preferences
-    $ needschanges = False
     menu:
         omni "Do you like your house?"
 
         "Yes":
             #keep it
             omni "Yay!"
-        "No":
-            #gives options for new backgrounds
-            $ needschanges = True
-            omni "Oh no!"
-
-    if needschanges:
-        omni "How can we help?"
-        #background choices
-        #menu:
 
     omni "I'm glad that's all settled now!"
     omni "Be sure to get a good night's sleep, we have a lot to do tomorrow."
 
-    #show the bedroom
+    scene bedroom
     menu:
         "Should I get a good night's sleep like they said?"
 
         "Yes":
             #fade to black nap time
+            scene black
             "I want to be prepared for tomorrow."
         "No":
             "Why."
             "Why would you pick this option."
-            #fade to black
+            scene black
 
     ####DAY TWO BITCHESSSSSSSSSSSSSS
     ###LOOOKIE HERE
     ## INSERTING A BREAK
 
-    #show bedroom
+    scene bedroom
     #birds chirping >:)
     #walk to kitchen
     show omnic
@@ -487,8 +529,9 @@ label start:
     label daytwo:
         if daytwoplays < 2:
             show omnic
+            scene map
             menu:
-                #show map
+                
                 
                 omni "Where would you like to go today?"
 
@@ -506,17 +549,24 @@ label start:
                         $ daytwoplays += 1
                         jump daytwo
         
+                #DONEEEE
                 "Gardens":
-                    "lalalalalala"
                     if visitedGarden:
                         omni "You've already been here"
                         jump daytwo
                     else:
                         hide omnic
-                        #show the garden
+                        scene garden
                         #birds chriping
-                        #maybe animate birds if time
-                        #peaceful, you decide to leave, because you are fufilled
+                        ""
+                        "What a beautiful garden."
+                        "I wonder if Andy is in charge of these tending to this place."
+                        ""
+                        ""
+                        ""
+                        omni "I'm glad you are enjoying yourself, but you must go back now."
+                        omni "It's been too long."
+                        #BIRDS LOUDER
                         $ visitedGarden = True
                         $ daytwoplays += 1
                         jump daytwo
@@ -530,6 +580,7 @@ label start:
                         hide omnic
                         $ visitedChurch = True
                         $ daytwoplays += 1
+                        scene insidechurch
                         show pastor
                         pastor "Hello!"
                         menu:
@@ -579,13 +630,31 @@ label start:
                         hide omnic
                         $ visitedShop = True
                         $ daytwoplays += 1
-                        #both andy and isha are there TOGETHER
-                        #(in bird store btw) isha attempting to help bella
-                        #bella wants to buy a bird for edward as a wedding gift
-                        #you say the bride doesnt need to get one for the groom
-                        #she says she knows they taste so good though
-                        #isha slinks off wha???
-                        #grow concerned, say she does what is best you have to go
+
+                        #scene birdstore
+                        #hear murmers
+                        ""
+                        #show bella left + isha right/ wherever exit door is is where bella is
+                        bella "No! I need a mourning dove, theyre his favorite."
+                        isha "Ma'am I'm telling you we don't have any."
+                        isha "We have lovely parrots or parakeets for sale if you would like."
+                        "I should speak up"
+                        $ fav_bird = renpy.input("What is your favorite bird?")
+                        me "Personally I love the %(fav_bird)s."
+                        isha "Ah, hello %(player_name)s, what an excellent choice!"
+                        isha "Bella we have three of those for sale now."
+                        bella "Hmm... He should find those enough to statisfy him."
+                        bella "Thank you!"
+                        #hide bella
+                        menu:
+                            isha "Do you want any birds dearie?"
+
+                            "Yes":
+                                omni "There is no way I can allow this."
+                                omni "You couldn't even take care of a map for more than an hour."
+                            "No": 
+                                isha "Okay."
+                            
                         jump daytwo
         
                 "Graveyard":
@@ -619,7 +688,7 @@ label start:
 
                 "Memorial":
                     if visitedMemorial:
-                        #show ishapt2
+                        show two_isha_memorial
                         isha "Ah!"
                         isha "I'm glad you've made it."
                         isha "Sorry about making you waste one playthrough, it was a necessary precaution."
@@ -627,6 +696,7 @@ label start:
                         isha "We are stuck in here, but that doesn't mean you have to."
                         isha "Now go! I'll help you as best I can later."
                         isha "Meet me in the gardens tomorrow."
+                        hide two_isha_memorial
                         $ meminfo = True
                     else:
                         hide omnic

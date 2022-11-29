@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 485: expected menuitem
-    show omnic
+File "game/script.rpy", line 533: expected menuitem
+    scene map
     ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Thu Nov 10 11:43:18 2022
+Mon Nov 28 23:52:35 2022
