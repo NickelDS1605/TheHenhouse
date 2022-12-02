@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 533: expected menuitem
-    scene map
-    ^
+File "game/script.rpy", line 666: Menu does not contain any choices.
+    menu:
+         ^
 
 Ren'Py Version: Ren'Py 8.0.1.22070801
-Mon Nov 28 23:52:35 2022
+Tue Nov 29 12:38:22 2022

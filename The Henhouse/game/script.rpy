@@ -42,6 +42,7 @@ label start:
     image upsetisha = "isha_upset.png"
     image one_isha_smile = "day1_ishasmile.png"
     image two_isha_memorial = "day2memorial_isha.png"
+    image two_isha = "day2_isha"
 
     #miscellaneous characters
     image omnic = "omni.png"
@@ -117,9 +118,11 @@ label start:
     
     isha "Oh why of course! Let me see it."
     scene map
+    #TODO: insert font change if possible ???
+    #TODO: add glitch effect
     isha "Ah I see! This is simple. All you have to do is walk down the xœìÝÏëäÌ¬ð¶ó° and head towards _ˆ×f ‡Ë°‡Å Ø]"
 
-    me "Uhhhhhhhhhhhhhhhhhhhhhhhhhhh"
+    me "Uhhhhhhhhhhhh"
     hide day1_ishasmile
     #insert font change + scene change
     scene scary
@@ -444,10 +447,16 @@ label start:
             #fade to black nap time
             scene black
             "I want to be prepared for tomorrow."
+            ""
+            "Zzz..."
+            ""
         "No":
             "Why."
             "Why would you pick this option."
             scene black
+            ""
+            "Zzz..."
+            ""
 
     ####DAY TWO BITCHESSSSSSSSSSSSSS
     ###LOOOKIE HERE
@@ -598,10 +607,10 @@ label start:
                                 pastor "If you come back tomorrow, I can get everything set up for a lesson."
                                 $ religion = True
                                 #maybe put music? could be fun
+                        hide pastor
                         jump daytwo
         
                 "Grocery Store":
-                    "lallalalalaal"
                     if visitedStore:
                         omni "You've already been here"
                         jump daytwo
@@ -622,7 +631,6 @@ label start:
                         jump daytwo
 
                 "Shopping Center":
-                    "lalalalalalalallala"
                     if visitedShop:
                         omni "You've already been here"
                         jump daytwo
@@ -635,6 +643,8 @@ label start:
                         #hear murmers
                         ""
                         #show bella left + isha right/ wherever exit door is is where bella is
+                        show neutralbella at left
+                        show two_isha at right
                         bella "No! I need a mourning dove, theyre his favorite."
                         isha "Ma'am I'm telling you we don't have any."
                         isha "We have lovely parrots or parakeets for sale if you would like."
@@ -645,7 +655,7 @@ label start:
                         isha "Bella we have three of those for sale now."
                         bella "Hmm... He should find those enough to statisfy him."
                         bella "Thank you!"
-                        #hide bella
+                        hide neutralbella
                         menu:
                             isha "Do you want any birds dearie?"
 
@@ -654,6 +664,11 @@ label start:
                                 omni "You couldn't even take care of a map for more than an hour."
                             "No": 
                                 isha "Okay."
+                        
+                        #menu:
+                           # "Should I ask her about what happened yesterday?"
+
+                          #  ""
                             
                         jump daytwo
         
@@ -688,12 +703,13 @@ label start:
 
                 "Memorial":
                     if visitedMemorial:
+                        scene 
                         show two_isha_memorial
                         isha "Ah!"
                         isha "I'm glad you've made it."
                         isha "Sorry about making you waste one playthrough, it was a necessary precaution."
                         isha "I'm sure you've realized by now this isn't a real place."
-                        isha "We are stuck in here, but that doesn't mean you have to."
+                        isha "We are stuck in here, but that doesn't mean you have to as well."
                         isha "Now go! I'll help you as best I can later."
                         isha "Meet me in the gardens tomorrow."
                         hide two_isha_memorial
