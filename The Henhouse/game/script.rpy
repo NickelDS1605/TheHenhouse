@@ -532,7 +532,7 @@ label start:
     $ visitedGrave = False
     $ visitedSchool = False
     $ visitedMemorial = False
-
+    $ weddingPoints = 0
     $ religion = False
     $ helpChurch = False
     label daytwo:
@@ -550,10 +550,29 @@ label start:
                         jump daytwo
                     else:
                         hide omnic
-                        #facing the fountain
-                        #edward asks for advice on wedding rign
-                        #is also scary
-                        #hints at a sacrifice
+                        scene townsquare
+                        show neutraledward
+                        ed "Hello %(player_name)s"
+                        ed "You know what girls like, right?"
+                        menu:
+                            ed "Do you think she would like a fancy ring or a more simple ring?"
+
+                            "Fancy":
+                                $ weddingPoints += 1
+                                ed "Hmm... that may distract from the crimson ceremony"
+                                ed "But I suppose you are right, she does love the ornate."
+                                me "What do you mean crimson ceremony?"
+                            "Simple":
+                                $ weddingPoints -= 1
+                                ed "Yes it would distract from the sacrifice potentially."
+                                ed "Would someone with her lavish tastes really like such a simple band though?"
+                                me "What do you mean sacrifice?"
+                            
+                        ed "It's about time that you go isn't it?"
+                        ed "We don't want you to be late."
+                        hide neutraledward
+                        scene black
+
                         $ visitedTown = True
                         $ daytwoplays += 1
                         jump daytwo
@@ -616,12 +635,16 @@ label start:
                         jump daytwo
                     else:
                         hide omnic
-                        "run into brooke first"
-                        "entirely depends on marr option"
-                        #if marr = True 
+                        show BrookeNeutral
+                        if brookemarr:
                             #she shows you what shes buying for her cat, asks if you like it
-                        #if false
+                            brooke "Hello stranger."
+                            brooke "My name is Brooke, it's so nice to see you again."
+
+                        else:
                             #asks you to move out of her way (rude)
+                            brooke "Excuse me. Can you move?"
+                            brooke "You're in the way."
 
                         #go to next aisle, see andy
                         #plus or minus point here maybe?
